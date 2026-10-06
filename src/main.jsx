@@ -9,6 +9,7 @@ import './styles/font.css'
 import './styles/header.css'
 import './styles/hero.css'
 import './styles/products.css'
+import './styles/novidades.css'
 
 import App from './App.jsx'
 

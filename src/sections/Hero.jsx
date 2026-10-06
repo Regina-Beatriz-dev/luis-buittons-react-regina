@@ -2,8 +2,7 @@ function Hero() {
   return (
     <section
       className="hero-section"
-      id="inicio"
-    >
+      id="inicio">
       <div className="container-fluid p-0">
 
         <div className="hero-content d-flex align-items-center justify-content-center text-center">
