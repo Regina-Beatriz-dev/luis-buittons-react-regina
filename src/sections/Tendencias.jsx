@@ -51,10 +51,6 @@ function Tendencias() {
                 usadas em diversas ocasiões.
               </p>
 
-              <a href="#destaques" className="nov-ler-mais">
-                LER MAIS →
-              </a>
-
             </article>
           </div>
 

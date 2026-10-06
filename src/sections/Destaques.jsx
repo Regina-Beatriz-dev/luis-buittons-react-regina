@@ -5,7 +5,7 @@ function Destaques() {
       id: 'fem-01',
       categoria: 'Feminino',
       nome: 'Vestido Midi em Seda',
-      preco: 'R$ 890,00',
+      preco: 890.00,
       imagem: 'https://images.unsplash.com/photo-1566174053879-31528523f8ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
     },
 
@@ -13,7 +13,7 @@ function Destaques() {
       id: 'mas-01',
       categoria: 'Masculino',
       nome: 'Camisa Social Oxford',
-      preco: 'R$ 350,00',
+      preco: 350.00,
       imagem: 'https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
     },
 
@@ -21,7 +21,7 @@ function Destaques() {
       id: 'fem-05',
       categoria: 'Feminino',
       nome: 'Casaco em Tweed',
-      preco: 'R$ 1.150,00',
+      preco: 1150.00,
       imagem: 'https://images.unsplash.com/photo-1539533018447-63fcce2678e3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
     },
 
@@ -29,7 +29,7 @@ function Destaques() {
       id: 'mas-03',
       categoria: 'Masculino',
       nome: 'Blazer Lã Fria',
-      preco: 'R$ 1.250,00',
+      preco: 1250.00,
       imagem: 'https://images.unsplash.com/photo-1551028719-00167b16eac5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
     },
 
@@ -37,7 +37,7 @@ function Destaques() {
       id: 'fem-04',
       categoria: 'Feminino',
       nome: 'Saia Plissada Clássica',
-      preco: 'R$ 280,00',
+      preco: 200.00,
       imagem: 'https://images.unsplash.com/photo-1582142306909-195724d33ffc?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
     },
 
@@ -45,10 +45,39 @@ function Destaques() {
       id: 'mas-06',
       categoria: 'Masculino',
       nome: 'Jaqueta de Couro Biker',
-      preco: 'R$ 1.800,00',
+      preco: 1800.00,
       imagem: 'https://images.unsplash.com/photo-1559551409-dadc959f76b8?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
     }
   ]
+
+  function adicionarAoCarrinho(produto) {
+
+  const carrinho =
+    JSON.parse(localStorage.getItem('carrinhoBuittons')) || []
+
+  const produtoExistente = carrinho.find(
+    item => item.id === produto.id
+  )
+
+  if (produtoExistente) {
+    produtoExistente.quantidade += 1
+  } else {
+    carrinho.push({
+      id: produto.id,
+      nome: produto.nome,
+      preco: produto.preco,
+      imagem: produto.imagem,
+      quantidade: 1
+    })
+  }
+
+  localStorage.setItem(
+    'carrinhoBuittons',
+    JSON.stringify(carrinho)
+  )
+
+  alert(`${produto.nome} foi adicionado ao carrinho!`)
+}
 
   return (
     <section
@@ -106,21 +135,23 @@ function Destaques() {
                     {produto.nome}
                   </h3>
 
-                  <p className="fw-bold mb-3 mt-auto">
-                    {produto.preco}
-                  </p>
+                 <p className="fw-bold mb-3 mt-auto">
+                    {produto.preco.toLocaleString('pt-BR', {
+                        style: 'currency',
+                        currency: 'BRL'
+                    })}
+                 </p>
 
                   <button
                     className="btn w-100 btn-add-carrinho"
-                  >
+                    onClick={() => adicionarAoCarrinho(produto)}
+                    >
                     <i className="fa-solid fa-cart-shopping me-2"></i>
                     Adicionar
                   </button>
 
                 </div>
-
               </div>
-
             </div>
 
           ))}

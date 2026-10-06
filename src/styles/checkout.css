@@ -1,0 +1,96 @@
+/* =================================
+   CHECKOUT - LUIS BUITTONS
+==================================== */
+
+.checkout-page h1,
+.checkout-page h2 {
+    font-family: 'Playfair Display', serif;
+    color: var(--text-main);
+}
+
+.checkout-card {
+    border: 1px solid var(--border-light) !important;
+    border-radius: var(--radius-md);
+    background-color: var(--bg-surface);
+}
+
+.checkout-card .form-control,
+.checkout-card .form-select {
+    border-color: var(--border-light);
+}
+
+.checkout-card .form-control:focus,
+.checkout-card .form-select:focus {
+    border-color: var(--border-focus);
+
+    box-shadow:
+        0 0 0 0.2rem
+        rgba(163, 122, 88, 0.15);
+}
+
+.checkout-etapa-ativa {
+    background-color: var(--brand-primary);
+    color: var(--text-on-dark);
+}
+
+.checkout-finalizar {
+    padding: 0.9rem 1rem;
+
+    background-color: var(--brand-primary);
+    color: var(--text-on-dark);
+
+    border: 1px solid var(--brand-primary);
+    border-radius: var(--radius-sm);
+
+    font-weight: 600;
+
+    transition: var(--transition);
+}
+
+.checkout-finalizar:hover {
+    background-color: var(--brand-hover);
+    border-color: var(--brand-hover);
+}
+
+.checkout-produto {
+    display: flex;
+    align-items: center;
+
+    gap: 0.75rem;
+
+    margin-bottom: 1rem;
+}
+
+.checkout-produto img {
+    width: 65px;
+    height: 65px;
+
+    object-fit: cover;
+
+    border-radius: var(--radius-sm);
+}
+
+.checkout-produto strong {
+    font-size: 0.85rem;
+}
+
+.checkout-aviso {
+    display: flex;
+    align-items: center;
+
+    gap: 1rem;
+
+    padding: 1rem;
+
+    background-color: var(--bg-subtle);
+
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-sm);
+
+    color: var(--text-main);
+}
+
+.checkout-aviso > i {
+    font-size: 1.5rem;
+    color: var(--brand-primary);
+}

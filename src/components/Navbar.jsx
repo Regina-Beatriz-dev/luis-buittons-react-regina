@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 function Navbar() {
   return (
     <header className="header sticky-top">
@@ -24,7 +26,7 @@ function Navbar() {
           >
             <i className="fa-solid fa-bars"></i>
           </button>
-          
+
           <div
             className="nav-links collapse"
             id="menuPrincipal"
@@ -57,9 +59,9 @@ function Navbar() {
 
             <ul>
               <li>
-                <a href="/carrinho">
-                  <i className="fa-solid fa-cart-shopping"></i>
-                </a>
+                <Link to="/carrinho" aria-label="Carrinho">
+                    <i className="fa-solid fa-cart-shopping"></i>
+                </Link>
               </li>
               <li>
                 <a href="#inicio">
