@@ -1,0 +1,83 @@
+/* ========================================================
+   PALETAS DE CORES
+=========================================================== */
+
+:root,
+[data-theme="classico"] {
+    --bg-main: #FAF7F2;
+    --bg-surface: #FFFFFF;
+    --bg-subtle: #F2EAE1;
+
+    --brand-primary: #5C3D2E;
+    --brand-accent: #A37A58;
+    --brand-hover: #805B43;
+
+    --text-main: #2B1E16;
+    --text-muted: #7A685A;
+    --text-on-dark: #FAF7F2;
+
+    --border-light: #E8DEC8;
+    --border-focus: #A37A58;
+
+    --shadow-sm: 0 2px 8px rgba(43, 30, 22, 0.04);
+    --shadow-md: 0 8px 24px rgba(43, 30, 22, 0.08);
+
+    --radius-sm: 4px;
+    --radius-md: 10px;
+
+    --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[data-theme="escuro"] {
+    --bg-main: #14110F;
+    --bg-surface: #1F1B18;
+    --bg-subtle: #2B2420;
+
+    --brand-primary: #A37A58;
+    --brand-accent: #D4B295;
+    --brand-hover: #C29978;
+
+    --text-main: #F5EFEB;
+    --text-muted: #A39284;
+    --text-on-dark: #14110F;
+
+    --border-light: #362E2A;
+    --border-focus: #D4B295;
+}
+
+
+/* ========================================================
+   ESTILOS GLOBAIS
+=========================================================== */
+
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-main);
+
+    min-height: 100vh;
+
+    -webkit-font-smoothing: antialiased;
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease;
+}
+
+section {
+    scroll-margin-top: 95px;
+}
