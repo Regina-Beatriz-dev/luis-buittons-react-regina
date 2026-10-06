@@ -117,11 +117,17 @@
     justify-content: center;
 }
 
+/* No desktop, o menu deve ficar sempre visível */
+.nav-links.collapse {
+    display: block;
+}
+
 /* =================================================
    RESPONSIVO — evita que os ícones (fa-heart, fa-cart,
    fa-user) quebrem linha quando a tela estreita
 ==================================================== */
 @media (max-width: 992px) {
+
     .header {
         padding: 1.1rem 1.5rem;
     }
@@ -142,10 +148,14 @@
         display: flex;
     }
 
-    /* O menu principal vira um painel que desce por cima do conteúdo,
-       em vez de disputar espaço na mesma linha dos ícones */
+    /* No celular, começa escondido */
     .nav-links.collapse:not(.show) {
         display: none;
+    }
+
+    /* Quando clicar no hambúrguer, aparece */
+    .nav-links.collapse.show {
+        display: block;
     }
 
     .nav-links {
@@ -153,7 +163,8 @@
         top: 100%;
         left: 0;
         right: 0;
-        background-color: var(--bg-surface, #FFFFFF);
+
+        background-color: var(--bg-surface);
         border-bottom: 1px solid var(--border-light);
         box-shadow: var(--shadow-md);
     }
@@ -162,12 +173,14 @@
         flex-direction: column;
         align-items: flex-start;
         gap: 0;
+
         padding: 0.5rem 1.5rem 1rem;
     }
 
     .nav-links ul li {
         width: 100%;
         padding: 0.7rem 0;
+
         border-bottom: 1px solid var(--border-light);
     }
 
@@ -176,18 +189,6 @@
     }
 
     .nav-links a::after {
-        display: none; /* a linha de hover não faz sentido em coluna */
-    }
-    
-    .nav-actions a {
-    text-decoration: none;
-    color: var(--brand-primary);
-    }
-
-    .nav-actions a:visited,
-    .nav-actions a:hover,
-    .nav-actions a:active {
-        text-decoration: none;
-        color: var(--brand-primary);
+        display: none;
     }
 }
